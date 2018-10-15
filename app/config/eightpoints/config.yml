@@ -17,13 +17,13 @@ eight_points_guzzle:
             plugin: ~
 
         api_vp:
-            base_url: "https://planning.archosting.ch"
+            base_url: "%wsvp_base_url%"
             options:            
                 headers:
                     Accept: "application/json"
 
         api_xflex:
-            base_url: "https://rest.xflex.ch"
+            base_url: "%wsxlex_base_url%"
             options:            
                 headers:
                     Accept: "application/json"

@@ -33,3 +33,21 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+    #GuzzleHttp\ClientInterface: "@eight_points_guzzle.client.api_vp"
+    #GuzzleHttp\ClientInterface: "@eight_points_guzzle.client.trigger_api"
+     
+    WSVP:
+        class: AppBundle\Service\WSVisualPlanning
+        public: true
+        arguments:
+            - "@eight_points_guzzle.client.api_vp"
+            - "%wsvp_apikey%"
+            
+    WSXFLEX:
+        class: AppBundle\Service\WSXflex
+        public: true
+        arguments:
+            - "@eight_points_guzzle.client.api_xflex"
+            - "%wsxflex_cid%"
+            - "%wsxflex_uid%"
+            - "%wsxflex_upw%"
